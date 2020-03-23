@@ -1,6 +1,19 @@
-let contaController = new ContaController();
+const clienteController = new ClienteController();
+const contaController = new ContaController();
 
-contaController.listar();
+
+
+if (window.location.href.includes('/app/index.html')) {
+    contaController.listar();
+}else if(window.location.href.includes('/app/clientes.html')) {
+    clienteController.listar();
+}
+
+
+/**
+ * CONTAS
+ */
+
 
 const c1 = new Conta('1', 100);
 const p1 = new Poupanca('2', 100);
@@ -13,3 +26,7 @@ console.log('Poupanca: ' + p1.saldo);
 
 cb1.creditar(100);
 console.log('Conta Bonificada: ' + cb1.saldo);
+
+/**
+ * CLIENTES
+ */
